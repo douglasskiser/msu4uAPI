@@ -1,0 +1,11 @@
+#browse-input {
+	display: none;
+}
+
+.file-input-container {
+	width: 300px;
+	position: relative;
+	left: 50%;
+	margin-left: -150px;
+
+}

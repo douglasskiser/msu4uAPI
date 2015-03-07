@@ -1,0 +1,8 @@
+<span ng-controller="NotificationsCtrl" class="notification-container">
+    <ul growl-notifications class="growl-notifications"></ul>
+    <div ng-repeat="notification in notifications track by $id($index)">
+        <div growl-notification class="alert alert-{{notification.type}} fading growl-notification">
+            {{notification.message}}
+        </div>
+    </div>
+</span>

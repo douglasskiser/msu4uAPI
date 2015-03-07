@@ -1,0 +1,62 @@
+<div class="modal-header">
+    <button ng-if="modal.dismissable" type="button" ng-click="$dismiss()" class="close">&times;</button>
+    <h4 ng-if="modal.title" ng-bind="modal.title" class="modal-title"></h4>
+</div>
+<div class="modal-body">
+    <p ng-if="modal.text" ng-bind="modal.text"></p>
+    <div ng-if="modal.html" ng-bind-html="modal.html"></div>
+    <div ng-if="modal.form == 'addUser'">
+        <form name="addUserForm" class="form" novalidate>
+            <div class="form-group">
+                <input class="form-control" type="text" name="username" placeholder="Username" ng-model="modal.formModel.username" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Email" ng-model="modal.formModel.email" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password" ng-model="modal.formModel.password" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="confirm" placeholder="Confirm Password" ng-model="modal.formModel.confirm" />
+            </div>
+            <p class="text-danger text-center" ng-if="modal.formModel.errors">{{modal.formModel.errors}}</p>
+        </form>
+    </div>
+
+    <div ng-if="modal.form == 'event'">
+        <form name="addEventForm" class="form" novalidate>
+            <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="Event Name" ng-model="modal.formModel.name" />
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="description" placeholder="Description" ng-model="modal.formModel.description"></textarea>
+            </div>
+            <div class="form-group">
+                <p class="input-group">
+                    <input class="form-control" type="text" name="date" placeholder="Date" ng-model="modal.formModel.date" datepicker-popup="dd-MMMM-yyyy" is-open="modal.datePickerIsOpen" />
+                    <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="modal.openDatePicker($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+                </p>
+            </div>
+            <div class="form-group">
+
+                <input class="form-control" type="text" name="time" placeholder="Time" ng-model="modal.formModel.time" />
+
+
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="location" placeholder="Location" ng-model="modal.formModel.location" />
+            </div>
+            <p class="text-danger text-center" ng-if="modal.formModel.errors">{{modal.formModel.errors}}</p>
+        </form>
+    </div>
+
+
+    <div ng-if="modal.upload">
+        <file-input></file-input>
+    </div>
+</div>
+<div class="modal-footer">
+    <span ng-repeat="button in modal.buttons"><button ng-if="button.passData" ng-class="button.classes" ng-click="button.click(modal.formModel)" ng-bind="button.text" class="btn"></button><button ng-if="!button.passData" ng-class="button.classes" ng-click="button.click($event)" ng-bind="button.text" class="btn"></button></span>
+</div>

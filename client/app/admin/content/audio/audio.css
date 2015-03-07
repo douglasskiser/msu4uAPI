@@ -1,0 +1,12 @@
+.audio-panel-heading {
+	height: 55px;
+	padding-top: 15px;
+}
+
+.audio-panel-title {
+	font-size: 1.3em;
+}
+
+.add-audio-btn {
+	margin-top: -5px;
+}

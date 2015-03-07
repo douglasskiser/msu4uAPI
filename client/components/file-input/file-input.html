@@ -1,0 +1,9 @@
+<div class="file-input-container">
+	<input type="file" id="browse-input" accept="audio/*" />
+	<p class="text-center">
+	<button class="btn btn-default" id="browse-btn" ng-click="browseFile()">Choose File</button>
+	<button class="btn btn-default" id="upload-btn" ng-click="upload()" ng-disabled="!clientFile.selected">Upload File</button>
+	</p>
+	<p class="text-center" ng-show="clientFile.name != ''">Filename: {{clientFile.name}}</p>
+	<p class="text-center" ng-show="clientFile.progress != ''">Uploaded: {{clientFile.progress}}</p>
+</div>

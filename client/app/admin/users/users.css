@@ -1,0 +1,14 @@
+.trash { color:rgb(209, 91, 71); }
+
+.users-panel-heading {
+	height: 55px;
+	padding-top: 15px;
+}
+
+.users-panel-title {
+	font-size: 1.3em;
+}
+
+.add-user-btn {
+	margin-top: -5px;
+}

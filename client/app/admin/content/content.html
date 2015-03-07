@@ -1,0 +1,24 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading users-panel-heading"><span class="users-panel-title">Manage Content</span>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item pointer" ui-sref="events">
+                    <span class="fa fa-chevron-right pull-right content-chevron"></span>Events
+                </li>
+                <li class="list-group-item pointer" ui-sref="audio">
+                    <span class="fa fa-chevron-right pull-right content-chevron"></span>Audio
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+<!--
+    <file-input></file-input>
+    <form ng-submit="uploadFile()">
+        <input type="file" ng-model="files" ng-file-select="onFileSelect(files)" ng-multiple="false" class="app-prompt-upload" />
+    </form>
+-->
+</div>
